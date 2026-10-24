@@ -7,10 +7,6 @@ COPY requirements.txt ./
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-COPY . .
-
-RUN opentelemetry-bootstrap -a install 
-
-ENV RECOMMENDATION_PORT 1010
+COPY . . 
 
 ENTRYPOINT ["python", "recommendation_server.py"]
